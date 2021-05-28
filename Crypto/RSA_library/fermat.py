@@ -1,5 +1,4 @@
-from basic import *
-from math_lib import *
+from math import *
 
 
 def fermat_factor(n):
@@ -13,15 +12,3 @@ def fermat_factor(n):
             y += 1
         else:
             x += 1
-
-
-def getkey(n):
-    p = fermat_factor(n)
-    if p == -1:
-        print("the factor is not found.")
-    else:
-        print(p)
-        print(n//p)
-
-
-getkey(int(input()))
