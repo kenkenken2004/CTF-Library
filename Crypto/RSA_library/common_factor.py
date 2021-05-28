@@ -1,5 +1,5 @@
 from basic import recover
-from math import gcd
+from math_lib import gcd
 
 
 def getkey(e, n, n2):

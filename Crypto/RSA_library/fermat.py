@@ -1,5 +1,5 @@
 from basic import *
-from math import *
+from math_lib import *
 
 
 def fermat_factor(n):
