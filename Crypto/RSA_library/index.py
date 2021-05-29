@@ -3,6 +3,8 @@ import common_factor
 import fermat
 import low_public_exponent_attack
 import low_factor
+import wieners_attack
+
 
 # basic.py
 # Generate a key pair
@@ -42,8 +44,14 @@ def low_E_attack(c, e, n):
     return low_public_exponent_attack.decrypt(e, n, c)
 
 
-# Get the private exponent from the public module which has a especially small factor.
-def low_factor_attack(e,n):
-    return low_factor.getkey(e,n)
+# Get the private exponent from the public key whose module has a especially small factor.
+def low_factor_attack(e, n):
+    return low_factor.getkey(e, n)
 
 
+# Get the private exponent from the public key if the private exponent is small enough. (d <= 1/3  *  n ^ 1/3)
+def wieners_attack(e, n):
+    ret = wieners_attack(e, n)
+    if ret==-1:
+        print("Couldn't find out the private exponent by Wiener's attack.")
+    return ret
