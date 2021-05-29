@@ -6,6 +6,7 @@ import low_factor
 import wieners_attack
 import hastads_broadcast_attack
 
+
 # basic.py
 # Generate a key pair
 def gen_key(bits):
@@ -52,12 +53,12 @@ def low_factor_attack(e, n):
 # Get the private exponent from the public key if the private exponent is small enough. (d <= 1/3  *  n ^ 1/3)
 def wieners_attack(e, n):
     ret = wieners_attack(e, n)
-    if ret==-1:
+    if ret == -1:
         print("Couldn't find out the private exponent by Wiener's attack.")
     return ret
 
+
 # Get the plain text from the pairs of cipher texts and public keys which are encrypted a same plain text with a same
 # public exponent.
-def hastads_broadcast_attack(e,c_list,n_list):
-    return hastads_broadcast_attack.hastads_broadcast_attack_(e,c_list,n_list)
-
+def hastads_broadcast_attack(e, c_list, n_list):
+    return hastads_broadcast_attack.exec(e, c_list, n_list)
