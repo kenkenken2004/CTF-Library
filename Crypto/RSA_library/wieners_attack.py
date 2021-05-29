@@ -1,5 +1,4 @@
 from math_lib import root
-from basic import gen_key
 
 
 # convert the continued fraction to a rational number
