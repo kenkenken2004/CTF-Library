@@ -41,16 +41,16 @@ def root(b, r):
 
 
 def crt(r, n):
-    N = 1
+    n_mul = 1
     for m in n:
-        N *= m
+        n_mul *= m
     result = 0
     for (a, n) in zip(r, n):
-        m = N // n
+        m = n_mul // n
         r, s = extgcd(n, m)
         d = gcd(n, m)
         if d != 1:
             print("Input not pairwise co-prime")
         result += a * s * m
 
-    return result % N, N
+    return result % n_mul, n_mul
