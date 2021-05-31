@@ -10,7 +10,7 @@ def key_gen(bits, function):
         w = function(w)
         w_list.append(w)
         if sum_w >= w:
-            print("Error: Invalid generate function.")
+            print("Error: Invalid superincreasing function.")
             return -1
         sum_w += w
     q = randint(sum_w + 1, (sum_w + 1) ** 2)
@@ -45,4 +45,3 @@ def decrypt(cipher, w_list, q, r):
             m = "0" + m
     m = int(m, 2)
     return m
-
