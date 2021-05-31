@@ -1,4 +1,3 @@
-from sympy import randprime
 from random import randint
 from math import gcd
 
@@ -10,8 +9,10 @@ def key_gen(bits, function):
     for a in range(bits):
         w = function(w)
         w_list.append(w)
+        if sum_w >= w:
+            print("Error: Invalid generate function.")
+            return -1
         sum_w += w
-
     q = randint(sum_w + 1, (sum_w + 1) ** 2)
     r = q
     while gcd(q, r) != 1:
@@ -33,4 +34,15 @@ def encrypt(plain, b_list):
 
 
 def decrypt(cipher, w_list, q, r):
-    c = pow(cipher, -1, q)
+    c = cipher * pow(r, -1, q) % q
+    m = ""
+    t = w_list.copy().reverse()
+    for a in t:
+        if a <= c:
+            m = "1" + m
+            c -= a
+        else:
+            m = "0" + m
+    m = int(m, 2)
+    return m
+
