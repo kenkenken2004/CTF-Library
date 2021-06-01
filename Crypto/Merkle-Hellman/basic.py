@@ -29,14 +29,15 @@ def encrypt(plain, b_list):
         return -1
     c = 0
     for a, b in zip(m, b_list):
-        c += a * b
+        c += (ord(a)-ord("0"))*b
     return c
 
 
 def decrypt(cipher, w_list, q, r):
     c = cipher * pow(r, -1, q) % q
     m = ""
-    t = w_list.copy().reverse()
+    t = w_list.copy()
+    t.reverse()
     for a in t:
         if a <= c:
             m = "1" + m
