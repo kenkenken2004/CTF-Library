@@ -13,12 +13,12 @@ def decrypt(cipher, p, q, b):
     return basic.decrypt(cipher, p, q, b)
 
 
-p, q, n, b = key_gen(64)
-m = 218357051202
+p, q, n, b = key_gen(1024)
+m = 21835734525324315264623626432
 c = encrypt(m, n, b)
 
 d1, d2, d3, d4 = decrypt(c, p, q, b)
-print(p,q,n,b)
+print(p, q, n, b)
 print(d1)
 print(d2)
 print(d3)
