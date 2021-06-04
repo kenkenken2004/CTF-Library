@@ -1,1 +1,1 @@
-print(bin(3))
+print(pow(-3,3,5))

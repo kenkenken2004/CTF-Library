@@ -1,4 +1,4 @@
-from math_lib import *
+from Crypto.Code.math_lib import *
 
 
 def decrypt(e, n, c):
