@@ -3,8 +3,8 @@ from Crypto.Code.math_lib import gcd
 
 def gen_key(bits):
     while True:
-        p = randprime((1 << (bits - 1)) + 1, 1 << bits)
-        q = randprime((1 << (bits - 1)) + 1, 1 << bits)
+        p = randprime((1 << (bits//2 - 1)) + 1, 1 << (bits//2))
+        q = randprime((1 << (bits//2 - 1)) + 1, 1 << (bits//2))
         if p != q and gcd(p - 1, q - 1) == 2:
             n = p * q
             e = 65537
