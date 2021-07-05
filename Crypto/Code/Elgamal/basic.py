@@ -5,7 +5,7 @@ from random import randrange as rand
 def key_gen(bits):
     p = randprime((1 << (bits - 1)) + 1, 1 << bits)
     g = rand(2, p)
-    x = rand(0, p)
+    x = rand(1, p)
     h = pow(g, x, p)
     return p, g, h, x
 
