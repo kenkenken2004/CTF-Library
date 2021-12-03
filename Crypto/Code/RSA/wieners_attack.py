@@ -53,3 +53,4 @@ def wieners_attack(e, n):
         if D > 0 and root(D, 2) != -1:
             return d
     return -1
+

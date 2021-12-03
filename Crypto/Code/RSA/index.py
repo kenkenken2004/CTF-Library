@@ -5,6 +5,8 @@ import low_public_exponent_attack
 import low_factor
 import wieners_attack
 import hastads_broadcast_attack
+import basic
+import common_modulus_attack
 
 
 # basic.py
@@ -62,3 +64,8 @@ def wieners_attack(e, n):
 # public exponent.
 def hastads_broadcast_attack(e, c_list, n_list):
     return hastads_broadcast_attack.exec(e, c_list, n_list)
+
+
+# Get the plain text from the lists of public keys which have the same modulus, and encrypted the same plain  text
+def common_modulus_attack(c_list, e_list, n):
+    return common_modulus_attack.common_modulus_attack(c_list, e_list, n)
