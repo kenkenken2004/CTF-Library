@@ -1,5 +1,5 @@
 from basic import recover
-from Crypto.Code.math_lib import gcd
+from Cryptanalysis.Code.math_lib import gcd
 
 
 def getkey(e, n1, n2):
