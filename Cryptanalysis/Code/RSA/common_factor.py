@@ -1,11 +1,11 @@
 from basic import recover
-from Cryptanalysis.Code.math_lib import gcd
+from ..math_lib import gcd
 
 
 def getkey(e, n1, n2):
     p = gcd(n1, n2)
     if p == 1:
-        print("There is not any common factor.")
+        print("These are co-prime, therefore it is hard to solve it.")
         return -1
     else:
         return recover(e, n1, 'p', p)

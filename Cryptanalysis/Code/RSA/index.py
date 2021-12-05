@@ -1,12 +1,11 @@
-import basic
-import common_factor
-import fermat
-import low_public_exponent_attack
-import low_factor
-import wieners_attack
-import hastads_broadcast_attack
-import basic
-import common_modulus_attack
+from . import common_factor
+from . import fermat
+from . import low_public_exponent_attack
+from . import low_factor
+from . import wieners_attack
+from . import hastads_broadcast_attack
+from . import basic
+from . import common_modulus_attack
 
 
 # basic.py

@@ -1,4 +1,4 @@
-from Crypto.Code.math_lib import *
+from ..math_lib import *
 
 
 def exec(e, c_list, n_list):

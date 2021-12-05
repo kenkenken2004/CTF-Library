@@ -1,5 +1,5 @@
 from sympy import randprime
-from Crypto.Code.math_lib import gcd
+from ..math_lib import gcd
 
 def gen_key(bits):
     while True:

@@ -1,4 +1,4 @@
-from Crypto.Code.math_lib import root
+from ..math_lib import root
 
 
 # convert the continued fraction to a rational number

@@ -1,4 +1,4 @@
-from Crypto.Code.math_lib import *
+from ..math_lib import *
 
 
 def common_modulus_attack(c_list, e_list, n):
