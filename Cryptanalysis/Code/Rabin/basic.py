@@ -1,6 +1,6 @@
 from sympy import randprime
 from random import randrange as rand
-from Crypto.Code.math_lib import crt
+from ..math_lib import crt
 
 
 def key_gen(bits):
