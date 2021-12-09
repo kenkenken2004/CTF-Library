@@ -1,4 +1,4 @@
-from basic import recover
+from .basic import recover
 from ..math_lib import gcd
 
 
