@@ -1,4 +1,4 @@
-from ..math_lib import *
+from ..MathLib.basic import *
 
 
 def exec(e, c_list, n_list):

@@ -1,4 +1,4 @@
-from ..math_lib import *
+from ..MathLib.basic import *
 
 
 def common_modulus_attack(c_list, e_list, n):

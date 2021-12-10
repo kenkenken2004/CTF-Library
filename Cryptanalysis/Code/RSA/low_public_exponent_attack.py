@@ -1,4 +1,4 @@
-from ..math_lib import *
+from ..MathLib.basic import *
 
 
 def decrypt(e, n, c):

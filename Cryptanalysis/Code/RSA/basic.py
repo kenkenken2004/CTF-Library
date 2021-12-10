@@ -1,5 +1,5 @@
 from sympy import randprime
-from ..math_lib import gcd
+from ..MathLib.basic import gcd
 
 
 def gen_key(bits):
