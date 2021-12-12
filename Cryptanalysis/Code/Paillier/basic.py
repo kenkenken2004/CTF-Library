@@ -22,5 +22,4 @@ def encrypt(m, n, g):
 
 def decrypt(c, p, q, n, g):
     l = lcm(p - 1, q - 1)
-
     return 0
