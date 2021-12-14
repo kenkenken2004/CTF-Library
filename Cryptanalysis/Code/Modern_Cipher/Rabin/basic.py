@@ -1,6 +1,6 @@
 from sympy import randprime
 from random import randrange as rand
-from ..MathLib.basic import *
+from Cryptanalysis.Code.MathLib.basic import *
 
 
 def key_gen(bits):

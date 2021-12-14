@@ -1,5 +1,5 @@
 from sympy import randprime, factorint
-from ..MathLib.basic import *
+from ...MathLib.basic import *
 from math import floor, sqrt
 from wieners_attack import wieners_attack
 

@@ -1,4 +1,4 @@
-from ..MathLib.basic import *
+from ...MathLib.basic import *
 
 
 # convert the continued fraction to a rational number
