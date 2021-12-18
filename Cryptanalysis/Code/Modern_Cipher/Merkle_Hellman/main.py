@@ -24,9 +24,7 @@ def key_gen(bits, function):
 
 def encrypt(plain, b_list):
     m = bin(plain)[2:]
-    if not (len(m) == len(b_list)):
-        print("Error: Invalid Key.")
-        return -1
+    m = "0" * (len(b_list)-len(m)) + m
     c = 0
     for a, b in zip(m, b_list):
         c += (ord(a)-ord("0"))*b
