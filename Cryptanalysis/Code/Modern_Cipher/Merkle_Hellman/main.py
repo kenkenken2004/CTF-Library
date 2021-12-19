@@ -1,40 +1,40 @@
-from random import randint
+from random import *
 from math import gcd
 
 
-def key_gen(bits, function):
-    w_list = []
-    w = 65537
-    sum_w = 0
-    for a in range(bits):
-        w = function(w)
-        w_list.append(w)
-        if sum_w >= w:
+def key_gen(n=100, d=2):
+    w = []
+    a = randrange(2 ** (d * n - n - 1), 2 ** (d * n - n))
+    sum_w = a
+    for i in range(1, n):
+        a = randrange(max(2 ** (d * n - n + i - 1), sum_w + 1), 2 ** (d * n - n + i))
+        w.append(a)
+        if sum_w >= a:
             print("Error: Invalid superincreasing function.")
             return -1
-        sum_w += w
-    q = randint(sum_w + 1, (sum_w + 1) ** 2)
+        sum_w += a
+    q = randrange(max(2 ** (d * n - 1), sum_w), 2 ** (d * n))
     r = q
     while gcd(q, r) != 1:
-        r = randint(1, q - 1)
+        r = randrange(2, q)
 
-    b_list = [((r * x) % q) for x in w_list]
-    return w_list, q, r, b_list
+    b = [((r * x) % q) for x in w]
+    return w, q, r, b
 
 
-def encrypt(plain, b_list):
-    m = bin(plain)[2:]
-    m = "0" * (len(b_list)-len(m)) + m
+def encrypt(m, b):
+    m = bin(m)[2:]
+    m = "0" * (len(b) - len(m)) + m
     c = 0
-    for a, b in zip(m, b_list):
-        c += (ord(a)-ord("0"))*b
+    for a, b in zip(m, b):
+        c += (ord(a) - ord("0")) * b
     return c
 
 
-def decrypt(cipher, w_list, q, r):
-    c = cipher * pow(r, -1, q) % q
+def decrypt(c, w, q, r):
+    c = (c * pow(r, -1, q)) % q
     m = ""
-    t = w_list.copy()
+    t = w.copy()
     t.reverse()
     for a in t:
         if a <= c:
