@@ -1,4 +1,5 @@
 from sympy import randprime, factorint
+from sympy.ntheory.residue_ntheory import discrete_log
 from math import gcd
 from random import randrange
 from ...MathLib.basic import *
@@ -35,6 +36,5 @@ def encrypt(m, y, n, r):
 def decrypt(c, n, phi, x, r):
     assert c < n and gcd(c, n) == 1
     a = pow(c, phi // r, n)
-    m = baby_giant(x, a, n) % r
-    assert m != -1
+    m = discrete_log(n, a, x) % r
     return m
