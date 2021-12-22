@@ -17,7 +17,6 @@ def key_gen(n=100, d=2):
     r = q
     while gcd(q, r) != 1:
         r = randrange(2, q)
-
     b = [((r * x) % q) for x in w]
     return w, q, r, b
 
